@@ -6,7 +6,7 @@
 
 ## 🐛 Bug Summary
 
-cuOpt 26.2.0 PDLP solver incorrectly reports **"MIP Infeasible"** for a portfolio optimization problem that has a **proven feasible solution** (verified with Gurobi).
+cuOpt 26.2.0 PDLP and concurrent mode solver incorrectly reports **"MIP Infeasible"** for a portfolio optimization problem that has a **proven feasible solution** (verified with Gurobi).
 
 ## 🎯 Quick Facts
 
@@ -83,12 +83,6 @@ See [DETAILED_ANALYSIS.md](DETAILED_ANALYSIS.md) for:
 - Numerical stability analysis
 - Version comparison (26.2.0 vs 25.10.1)
 
-## ❓ Questions for NVIDIA
-
-1. Is this a known PDLP numerical stability issue?
-2. Recommended workaround (solver settings or reformulation)?
-3. Should we avoid PDLP for portfolio optimization?
-4. Fix timeline?
 
 
 ## 📝 Tested Versions
