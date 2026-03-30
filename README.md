@@ -85,8 +85,8 @@ This indicates **numerical instability**, not true infeasibility.
 
 After declaring root LP infeasible, cuOpt continues:
 - Root LP fails: ~9 seconds
-- Silent execution: ~54 seconds
-- **Waste**: 86% of solve time on already-failed problem
+- Silent execution: ~54 seconds (under 1 minute timelimit)
+- **Waste**: After displaying MIP infeasible, cuOpt still running till timelimit
 
 ## 📊 Detailed Analysis
 
@@ -103,12 +103,6 @@ See [DETAILED_ANALYSIS.md](DETAILED_ANALYSIS.md) for:
 3. Should we avoid PDLP for portfolio optimization?
 4. Fix timeline?
 
-## 💥 Impact
-
-This bug **blocks cuOpt usage** for large-scale financial optimization:
-- Portfolio problems with 1200+ time periods fail incorrectly
-- Wastes computational resources (86% of time)
-- Forces users back to CPU solvers (Gurobi)
 
 ## 📝 Tested Versions
 
@@ -116,18 +110,3 @@ This bug **blocks cuOpt usage** for large-scale financial optimization:
 - ✅ **cuOpt 25.10.1**: Bug reproduced (same false infeasibility)
 - ✅ **Gurobi 11.x**: Finds feasible solution (proof of bug)
 
-## 📞 Contact
-
-- **Reporter**: [Your Name]
-- **Email**: [Your Email]
-- **Date**: 2026-03-29
-
-## 📄 License
-
-This bug report and MRE code are provided under MIT License for reproduction purposes.
-
----
-
-**Related Links**:
-- [NVIDIA cuOpt Documentation](https://docs.nvidia.com/cuopt/)
-- [NVIDIA Developer Forum](https://forums.developer.nvidia.com/)
