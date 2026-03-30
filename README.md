@@ -40,7 +40,7 @@ pip install --extra-index-url=https://pypi.nvidia.com 'cuopt-cu13==26.2.*'
 
 ```bash
 # Clone this repo
-git clone https://github.com/[username]/cuopt-pdlp-infeasibility-bug.git
+git clone https://github.com/dreamaker0224/cuopt-pdlp-infeasibility-bug.git
 cd cuopt-pdlp-infeasibility-bug
 
 # Generate synthetic data (takes ~5 seconds)
