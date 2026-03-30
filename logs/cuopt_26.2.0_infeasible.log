@@ -1,0 +1,86 @@
+Setting parameter method to 1
+Setting parameter pdlp_solver_mode to 1
+Setting parameter time_limit to 6.000000e+01
+Setting parameter num_cpu_threads to 19
+cuOpt version: 26.2.0, git hash: f73da24d, host arch: x86_64, device archs: 75-real,80-real,86-real,90a-real,100f-real,120a-real,120
+CPU: AMD Ryzen 9 9900X 12-Core Processor, threads (physical/logical): 20/20, RAM: 4.28 GiB
+CUDA 13.1, device: NVIDIA GeForce RTX 5060 Ti (ID 0), VRAM: 15.48 GiB
+CUDA device UUID: 1e77ffffffc456-0effffff87-7dffffff92
+
+Solving a problem with 4557 constraints, 7909 variables (1677 integers), and 2029894 nonzeros
+Problem scaling:
+Objective coefficents range:          [3e-03, 1e+00]
+Constraint matrix coefficients range: [1e-08, 1e+00]
+Constraint rhs / bounds range:        [0e+00, 1e+00]
+Variable bounds range:                [0e+00, 1e+00]
+Warning: input problem contains a large range of coefficients: consider reformulating to avoid numerical difficulties.
+
+Original problem: 4557 constraints, 7909 variables, 2029894 nonzeros
+Calling Papilo presolver (git hash 741a2b9c)
+Presolve status: reduced the problem
+Presolve removed: 0 constraints, 1 variables, 1 nonzeros
+Presolved problem: 4557 constraints, 7908 variables, 2029893 nonzeros
+Papilo presolve time: 0.94
+Objective offset 0.000500 scaling_factor -1.000000
+Model fingerprint: 0x191824b5
+Running presolve!
+After cuOpt presolve: 4557 constraints, 7908 variables, objective offset 0.000500.
+cuOpt presolve time: 4.64
+
+Solving LP root relaxation in concurrent mode
+Skipping column scaling
+Dual Simplex Phase 1
+Dual feasible solution found.
+Dual Simplex Phase 2
+ Iter     Objective           Num Inf.  Sum Inf.     Perturb  Time
+    0 +1.7835954622320474e-01    1917 3.11372028e+05 0.00e+00 5.88
+    1 +1.7815919456141577e-01     583 4.84388225e-01 0.00e+00 5.89
+ 1000 +1.7699493384547565e-01     525 4.00978135e+00 0.00e+00 6.18
+ 2000 -4.6686123164201447e+00     766 3.16348771e+06 0.00e+00 7.47
+ 3000 -9.8320261494715027e+01     778 1.64323315e+09 1.00e-07 9.36
+No entering variable found. Iter 3150
+Scaled infeasibility 5.442293e-07
+Dual infeasibility after removing perturbation 0.000000e+00
+Removed perturbation of 8.58e-05.
+Updated primal infeasibility: 3.825715e+08
+Continuing with perturbation removed and steepest edge norms reset
+No entering variable found. Iter 3150
+Scaled infeasibility 5.442293e-07
+Dual infeasibility 0.000000e+00
+Primal infeasibility 3.825715e+08
+Updates 90
+Steepest edge 5.442293e-07
+
+
+Root relaxation returned: INFEASIBLE
+
+
+MIP Infeasible
+Loading data: synthetic_russell3000_30y_daily.csv
+Data shape: 7547 periods × 1677 stocks
+
+================================================================================
+Omega Ratio Portfolio Optimization - cuOpt PDLP
+Window: 1200 periods
+================================================================================
+
+Problem Size:
+  Stocks (N): 1677
+  Periods (T): 1200
+  Variables: 7909 (1677 integer)
+  Constraints: 4557
+
+Solving...
+
+
+================================================================================
+RESULTS
+================================================================================
+Status: Infeasible
+Solve Time: 63.17s
+❌ Problem declared INFEASIBLE (this is the bug!)
+================================================================================
+
+
+⚠️  BUG REPRODUCED: cuOpt PDLP incorrectly reports 'Infeasible'
+    Gurobi finds feasible solution for the same problem!

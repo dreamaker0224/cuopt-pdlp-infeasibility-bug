@@ -1,0 +1,25 @@
+# Generated files
+*.csv
+*.pyc
+__pycache__/
+.DS_Store
+
+# Exclude generated logs but keep example logs in logs/
+*.log
+!logs/*.log
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test results
+test_*.txt
+output_*.txt
+
+# Python virtual env
+venv/
+env/
+.env
