@@ -25,28 +25,15 @@ cuOpt 26.2.0 PDLP solver incorrectly reports **"MIP Infeasible"** for a portfoli
 
 **Coefficient Range**: [1e-08, 1e+00] ← 8 orders of magnitude causes numerical issues
 
-## 🔬 Reproduction
-
-### Prerequisites
-
-```bash
-# Install cuOpt 26.2.0
-pip install --extra-index-url=https://pypi.nvidia.com 'cuopt-cu13==26.2.*'
-
-# Requirements: CUDA 13.0+, NVIDIA GPU (Compute Capability 7.0+)
-```
 
 ### Run MRE
 
 ```bash
-# Clone this repo
-git clone https://github.com/dreamaker0224/cuopt-pdlp-infeasibility-bug.git
-cd cuopt-pdlp-infeasibility-bug
 
-# Generate synthetic data (takes ~5 seconds)
+# Generate synthetic data 
 python generate_synthetic_data.py
 
-# Run bug reproduction (takes ~60 seconds)
+# Run bug reproduction 
 python reproduce_bug.py
 ```
 
