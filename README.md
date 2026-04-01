@@ -91,3 +91,11 @@ See [DETAILED_ANALYSIS.md](DETAILED_ANALYSIS.md) for:
 - ✅ **cuOpt 25.10.1**: Bug reproduced (same false infeasibility)
 - ✅ **Gurobi 11.x**: Finds feasible solution (proof of bug)
 
+## 💻 Test Environment
+
+- **OS**: Ubuntu 24.04 LTS (Linux 6.8.0-101-generic)
+- **Python**: 3.12.3
+- **GPU**: NVIDIA GeForce RTX 5060 Ti
+- **NVIDIA Driver**: 580.126.20
+- **CUDA**: 13.0
+
